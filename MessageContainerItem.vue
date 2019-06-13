@@ -1,9 +1,7 @@
 <template>
-    <transition name="message">
-        <div :class="`message ${type}-message`">
-            {{ message }}
-        </div>
-    </transition>
+    <div :class="`message ${type}-message`">
+        {{ message }}
+    </div>
 </template>
 
 <script>

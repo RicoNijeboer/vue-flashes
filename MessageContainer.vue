@@ -27,20 +27,6 @@
 </script>
 
 <style lang="scss">
-    .message-enter-active, .message-leave-active {
-        transition: all .2s ease-out;
-        transition-delay: .3s;
-        transform: translateX(0);
-    }
-    .message-leave-active {
-        transition-delay: 0s;
-    }
-
-    .message-enter, .message-leave-to {
-        opacity: 0;
-        transform: translateX(15%);
-    }
-
     .message-container {
         display: block;
         position: fixed;
