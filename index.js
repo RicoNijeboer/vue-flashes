@@ -15,7 +15,7 @@ class VueFlashes {
 
     _init() {
         const el = document.createElement('div');
-        document.appendChild(el);
+        document.body.appendChild(el);
         this.container = new Vue({
             data: {
                 messages: [],
