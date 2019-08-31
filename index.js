@@ -24,6 +24,33 @@ class VueFlashes {
         });
         this.container.$mount(el);
     }
+
+    message(msg, type) {
+        return this.messages.push({
+            message: msg,
+            type,
+        }) - 1;
+    }
+
+    flash(msg, type, timeout = 3) {
+        timeout = timeout * 1000;
+
+        const index = this.message(msg, type);
+
+        setTimeout(() => this.remove(index), timeout);
+    }
+
+    remove(index) {
+        this.messages.splice(index, 1);
+    }
+
+    indexOf(msg, type) {
+        return this.messages.findIndex(m => m.message === msg && m.type === type);
+    }
+
+    get messages() {
+        return this.container.messages;
+    }
 }
 
 export const Flashes = new VueFlashes();
