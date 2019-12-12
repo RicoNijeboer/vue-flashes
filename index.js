@@ -35,9 +35,9 @@ class VueFlashes {
     flash(msg, type, timeout = 3) {
         timeout = timeout * 1000;
 
-        const index = this.message(msg, type);
+        this.message(msg, type);
 
-        setTimeout(() => this.remove(index), timeout);
+        setTimeout(() => this.remove(this.indexOf(msg, type)), timeout);
     }
 
     remove(index) {
