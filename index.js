@@ -14,6 +14,9 @@ class VueFlashes {
     }
 
     _init() {
+        if (!process.isClient) {
+            return;
+        }
         const el = document.createElement('div');
         document.body.appendChild(el);
         this.container = new Vue({
