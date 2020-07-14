@@ -14,7 +14,7 @@ class VueFlashes {
     }
 
     _init() {
-        if (!process.isClient) {
+        if (process && !process.isClient) {
             return;
         }
         const el = document.createElement('div');
